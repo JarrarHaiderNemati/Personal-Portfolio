@@ -7,10 +7,10 @@ function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center bg-gray-800 text-white px-6 sm:px-10 text-center pt-32 sm:pt-20 w-full">
+    <section className="min-h-screen flex flex-col items-center justify-center bg-gray-800 text-white px-6 sm:px-10 text-center pt-40 sm:pt-20 w-full">
       {/* Name & Title with Typewriter Effect */}
       <motion.h1
-        className="text-2xl sm:text-5xl font-bold mb-4"
+        className="text-3xl sm:text-5xl font-bold mb-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -31,7 +31,7 @@ function Hero() {
 
       {/* Subtitle */}
       <motion.p
-        className="text-sm sm:text-xl text-gray-300 mb-6"
+        className="text-base sm:text-xl text-gray-300 mb-6"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
@@ -95,7 +95,7 @@ function Hero() {
         <img
           src="/Jar.jpeg"
           alt="Jarrar Haider"
-          className="w-32 sm:w-40 h-32 sm:h-40 rounded-full border-4 border-blue-500 shadow-lg"
+          className="w-28 sm:w-40 h-28 sm:h-40 rounded-full border-4 border-blue-500 shadow-lg"
         />
       </motion.div>
     </section>

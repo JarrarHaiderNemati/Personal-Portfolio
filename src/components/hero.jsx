@@ -7,10 +7,10 @@ function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center bg-gray-800 text-white px-6 sm:px-10 text-center pt-40 sm:pt-20 w-full">
+    <section className="min-h-screen flex flex-col justify-start items-center bg-gray-800 text-white px-6 sm:px-10 text-center pt-52 sm:pt-20 w-full">
       {/* Name & Title with Typewriter Effect */}
       <motion.h1
-        className="text-3xl sm:text-5xl font-bold mb-4"
+        className="text-3xl sm:text-5xl font-bold mb-4 break-words w-full"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}

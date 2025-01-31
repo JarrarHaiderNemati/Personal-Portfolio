@@ -7,10 +7,10 @@ function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center bg-gray-800 text-white px-5 sm:px-10 text-center">
+    <section className="min-h-screen flex flex-col items-center justify-center bg-gray-800 text-white px-6 sm:px-10 text-center pt-32 sm:pt-20 w-full">
       {/* Name & Title with Typewriter Effect */}
       <motion.h1
-        className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
+        className="text-2xl sm:text-5xl font-bold mb-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -19,7 +19,7 @@ function Hero() {
         <span className="text-blue-400">
           <Typewriter
             words={["Jarrar Haider", "a Full Stack Developer", "a MERN Stack Developer"]}
-            loop={0} // Infinite loop
+            loop={0}
             cursor
             cursorStyle="|"
             typeSpeed={100}
@@ -31,7 +31,7 @@ function Hero() {
 
       {/* Subtitle */}
       <motion.p
-        className="text-lg sm:text-xl text-gray-300 mb-6"
+        className="text-sm sm:text-xl text-gray-300 mb-6"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
@@ -41,7 +41,7 @@ function Hero() {
 
       {/* About Me Section */}
       <motion.p
-        className="max-w-2xl text-base sm:text-lg text-gray-400 mb-6 px-3"
+        className="max-w-xs sm:max-w-2xl text-sm sm:text-lg text-gray-400 mb-6"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
@@ -55,7 +55,7 @@ function Hero() {
 
       {/* Pricing Information */}
       <motion.p
-        className="max-w-xl text-base sm:text-lg text-gray-300 mb-6"
+        className="max-w-xs sm:max-w-xl text-sm sm:text-lg text-gray-300 mb-6"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
@@ -66,20 +66,20 @@ function Hero() {
 
       {/* CTA Buttons */}
       <motion.div
-        className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
+        className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 w-full max-w-xs sm:max-w-none"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
       >
         <div
           onClick={() => viewSection("projects")}
-          className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-700 cursor-pointer text-center"
+          className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-700 cursor-pointer w-full text-center"
         >
           View My Work
         </div>
         <div
           onClick={() => viewSection("contact")}
-          className="bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-600 cursor-pointer text-center"
+          className="bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-600 cursor-pointer w-full text-center"
         >
           Hire Me
         </div>
@@ -95,7 +95,7 @@ function Hero() {
         <img
           src="/Jar.jpeg"
           alt="Jarrar Haider"
-          className="w-28 sm:w-36 md:w-40 h-28 sm:h-36 md:h-40 rounded-full border-4 border-blue-500 shadow-lg"
+          className="w-32 sm:w-40 h-32 sm:h-40 rounded-full border-4 border-blue-500 shadow-lg"
         />
       </motion.div>
     </section>

@@ -90,7 +90,7 @@ function Projects() {
           <p className="text-gray-400 text-center">
             A full fledged chatting platform (Work in progress).
             <br />
-            <span className="text-white">Live link :</span> <a href="https://chatmango.netlify.app" target="_blank" className="text-blue-400 hover:underline">https://mangomerce.netlify.app</a>
+            <span className="text-white">Live link :</span> <a href="https://chatmango.netlify.app" target="_blank" className="text-blue-400 hover:underline">https://chatmango.netlify.app</a>
           </p>
 
           <div

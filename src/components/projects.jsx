@@ -98,7 +98,7 @@ function Projects() {
               "MangoChat",
               "MangoChat is a real-time chat application built with React and Socket.IO, allowing users to send private messages instantly. It features live messaging, chat history, user search, and a sleek, responsive UI — making communication smooth and interactive.",
               "/Chatup.png",
-              null
+              "/MangoChatDemo.mp4"
             )}
             className="text-blue-400 hover:underline mt-2 cursor-pointer"
           >

@@ -5,7 +5,7 @@ import { Typewriter } from "react-simple-typewriter"
 import { ArrowDown, Code, Briefcase } from 'lucide-react'
 
 function Hero() {
-  const viewSection = () => {
+  const viewSection = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
   }
 

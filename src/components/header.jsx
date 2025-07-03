@@ -16,7 +16,7 @@ function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleScroll =() => {
+  const handleScroll =(id) => {
     setMobileMenuOpen(false)
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
   }

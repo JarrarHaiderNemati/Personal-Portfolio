@@ -54,7 +54,7 @@ function Footer() {
 
         {/* Bottom text */}
         <div className="text-center mt-8 text-sm text-gray-500">
-          <p>Designed and developed with ❤️ by Jarrar Haider</p>
+          <p>Designed and developed by Jarrar Haider</p>
         </div>
       </div>
     </footer>

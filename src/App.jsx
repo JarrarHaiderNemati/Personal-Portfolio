@@ -8,6 +8,7 @@ import Hero from './components/hero.jsx'
 import About from './components/about.jsx'
 import Projects from './components/projects.jsx'
 import Education from './components/education.jsx'
+import Footer from './components/footer.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,6 +21,7 @@ function App() {
       <Education></Education>
       <Projects></Projects>
       <Contact></Contact>
+      <Footer></Footer>
     </>
   )
 }

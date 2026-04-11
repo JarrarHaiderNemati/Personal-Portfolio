@@ -49,8 +49,8 @@ function Hero() {
         className="mb-10 relative"
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ 
-          duration: 0.8, 
+        transition={{
+          duration: 0.8,
           delay: 0.2,
           type: "spring",
           stiffness: 100
@@ -93,7 +93,7 @@ function Hero() {
         transition={{ duration: 0.8, delay: 0.7 }}
       >
         <p className="text-lg sm:text-xl bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent font-medium">
-          Full Stack Developer | MERN Stack | React & Tailwind Enthusiast
+          AI-Powered Full Stack Developer | n8n & Automations | MERN
         </p>
       </motion.div>
 
@@ -104,23 +104,10 @@ function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.9 }}
       >
-        I am a passionate full-stack developer specializing in the MERN stack.
-        I build modern, responsive, and scalable web applications with clean code
-        and exceptional user experiences.
+        I am an AI-powered full-stack developer specializing in the MERN stack.
+        I build intelligent, scalable, and modern web applications by combining
+        clean code with AI, automation, and smart system design.
       </motion.p>
-
-      {/* Pricing Information with highlight */}
-      <motion.div
-        className="max-w-md bg-gradient-to-r from-blue-900/40 to-purple-900/40 backdrop-blur-sm p-4 rounded-xl border border-blue-500/20 mb-10"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1.1 }}
-      >
-        <p className="text-base sm:text-lg text-gray-200">
-          <span className="text-yellow-400 text-xl">💰</span> I provide high-quality development services at a very affordable
-          cost. My focus is on delivering great value without charging high rates!
-        </p>
-      </motion.div>
 
       {/* CTA Buttons */}
       <motion.div

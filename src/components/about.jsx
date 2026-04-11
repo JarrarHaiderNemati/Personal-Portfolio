@@ -11,20 +11,25 @@ function About() {
   })
 
   const skills = [
-    { 
-      category: "Frontend", 
+    {
+      category: "Frontend",
       icon: <Code className="text-blue-400" size={24} />,
       items: ["React.js", "Tailwind CSS", "JavaScript", "Responsive Design"]
     },
-    { 
-      category: "Backend", 
+    {
+      category: "Backend",
       icon: <Server className="text-purple-400" size={24} />,
       items: ["Node.js", "Express.js", "REST APIs", "MongoDB", "MySQL"]
     },
-    { 
-      category: "Other", 
+    {
+      category: "AI & Automation",
+      icon: <Zap className="text-green-400" size={24} />,
+      items: ["n8n", "LangChain", "LangGraph"]
+    },
+    {
+      category: "Other",
       icon: <GitBranch className="text-green-400" size={24} />,
-      items: ["Git/GitHub", "Deployment", "CI/CD", "Problem Solving"]
+      items: ["Git/GitHub", "Docker", "CI/CD", "AWS"]
     }
   ]
 
@@ -60,27 +65,29 @@ function About() {
                 <Zap className="text-yellow-400 mr-3" size={24} />
                 <span>My Journey</span>
               </h3>
-              
+
               <div className="space-y-6 text-gray-300">
                 <p className="leading-relaxed">
-                  I'm a self-taught full-stack developer with a strong focus on the <span className="text-blue-400 font-medium">MERN stack</span> (MongoDB, Express.js, React, Node.js). 
-                  Even though I'm relatively new to the industry, I have built several projects that showcase my ability 
-                  to develop functional, modern, and responsive web applications.
+                  I'm a full-stack developer focused on the <span className="text-blue-400 font-medium">MERN stack</span>, with a strong emphasis on building <span className="text-blue-400 font-medium">AI-powered applications</span>.
                 </p>
-                
+
                 <p className="leading-relaxed">
-                  What sets me apart is my <span className="text-blue-400 font-medium">dedication, strong learning mindset, and problem-solving skills</span>. 
-                  I focus on writing <span className="text-blue-400 font-medium">clean, efficient code</span> and delivering high-quality projects.
+                  I combine <span className="text-blue-400 font-medium">modern web technologies</span> with <span className="text-blue-400 font-medium">AI, automation, and smart workflows</span> to create systems that are not just functional, but intelligent and efficient.
                 </p>
-                
+
                 <p className="leading-relaxed">
-                  Plus, I offer my services at <span className="text-yellow-400 font-medium">an affordable cost</span> without compromising on quality!
+                  My approach is centered around <span className="text-blue-400 font-medium">problem-solving, clean architecture, and practical implementation</span>.
+                  I focus on understanding real-world challenges and building solutions that are scalable, secure, and production-ready.
                 </p>
-                
+
+                <p className="leading-relaxed">
+                  I continuously explore new tools and technologies, especially in the <span className="text-blue-400 font-medium">AI and automation space</span>, to stay ahead and deliver smarter solutions.
+                </p>
+
                 <div className="pt-4 border-t border-gray-700">
                   <p className="flex items-center">
                     <span className="text-xl mr-2">🎯</span>
-                    I enjoy learning about new technologies and building projects that challenge my skills.
+                    I build intelligent systems that solve real problems — not just apps that look good.
                   </p>
                 </div>
               </div>
@@ -108,10 +115,10 @@ function About() {
                   </div>
                   <h3 className="text-xl font-bold">{skillGroup.category}</h3>
                 </div>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {skillGroup.items.map((skill) => (
-                    <span 
+                    <span
                       key={skill}
                       className="px-3 py-1 bg-gray-700/50 rounded-full text-sm font-medium text-gray-200 border border-gray-600/50"
                     >

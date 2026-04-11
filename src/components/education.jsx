@@ -72,8 +72,7 @@ function Education() {
               
               <p className="text-gray-300 leading-relaxed">
                 Currently studying Software Engineering at the National University of Sciences and Technology (NUST), 
-                one of Pakistan's premier technical institutions. Focusing on web development and constantly working 
-                on projects to enhance my expertise in full-stack development.
+                one of Pakistan's premier technical institutions.
               </p>
             </div>
           </div>

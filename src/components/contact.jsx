@@ -56,7 +56,7 @@ function Contact() {
             <p className="mt-5 text-lg leading-8 text-slate-300">
               Send the basics and your email app will open with everything formatted.
               I am open to freelance projects, internships, and full-time roles around MERN,
-              automation, and agentic AI systems.
+              LangGraph agents, ML/DL, n8n automation, and agentic AI systems.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -69,7 +69,7 @@ function Contact() {
                 </span>
                 <span>
                   <span className="block text-sm font-semibold text-slate-400">Email</span>
-                  <span className="font-bold text-white">jarrarnemati@gmail.com</span>
+                  <span className="break-all font-bold text-white">jarrarnemati@gmail.com</span>
                 </span>
               </a>
 

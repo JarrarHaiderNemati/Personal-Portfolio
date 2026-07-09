@@ -18,7 +18,7 @@ function Footer() {
           <p className="mt-1 text-sm text-slate-400">&copy; {currentYear} Built with React and Tailwind CSS.</p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
           <a href="#about" className="text-sm font-semibold text-slate-400 transition hover:text-white">
             About
           </a>
@@ -28,12 +28,15 @@ function Footer() {
           <a href="#projects" className="text-sm font-semibold text-slate-400 transition hover:text-white">
             Projects
           </a>
+          <a href="#courses" className="text-sm font-semibold text-slate-400 transition hover:text-white">
+            Courses
+          </a>
           <a href="#contact" className="text-sm font-semibold text-slate-400 transition hover:text-white">
             Contact
           </a>
           <motion.button
             onClick={scrollToTop}
-            className="ml-2 grid h-10 w-10 place-items-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-950/25 transition"
+            className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-950/25 transition sm:ml-2"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.96 }}
             aria-label="Back to top"

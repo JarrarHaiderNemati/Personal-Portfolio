@@ -19,7 +19,7 @@ function Hero() {
 
   const highlights = [
     { label: "MERN Stack", icon: <Code2 size={18} /> },
-    { label: "LLMs + RAG", icon: <Bot size={18} /> },
+    { label: "LangGraph Agents", icon: <Bot size={18} /> },
     { label: "n8n + APIs", icon: <Workflow size={18} /> },
   ]
 
@@ -61,11 +61,13 @@ function Hero() {
         >
           <div className="absolute -inset-5 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-400 opacity-35 blur-2xl" />
           <div className="absolute -inset-2 rounded-full border border-blue-300/30" />
-          <img
-            src="/Jar.jpeg"
-            alt="Jarrar Haider Nemati"
-            className="relative h-36 w-36 rounded-full border-4 border-blue-400/60 object-cover shadow-2xl shadow-blue-950/60 sm:h-44 sm:w-44"
-          />
+          <div className="relative h-36 w-36 overflow-hidden rounded-full border-4 border-blue-400/60 shadow-2xl shadow-blue-950/60 sm:h-44 sm:w-44">
+            <img
+              src="/Jar.jpeg"
+              alt="Jarrar Haider Nemati"
+              className="h-full w-full object-cover object-[50%_42%]"
+            />
+          </div>
         </motion.div>
 
         <motion.div
@@ -75,7 +77,7 @@ function Hero() {
           transition={{ duration: 0.7, delay: 0.18 }}
         >
           <Sparkles size={16} className="text-cyan-300" />
-          AI-Powered Full Stack Developer
+          Agentic AI, ML/DL & Full Stack Development
         </motion.div>
 
         <motion.h1
@@ -87,7 +89,7 @@ function Hero() {
           Hi, I'm{" "}
           <span className="bg-gradient-to-r from-blue-300 via-cyan-200 to-purple-300 bg-clip-text text-transparent">
             <Typewriter
-              words={["Jarrar Haider Nemati", "a MERN Developer", "an Agentic AI Builder"]}
+              words={["Jarrar Haider Nemati", "a LangGraph Builder", "an Agentic AI Developer"]}
               loop={0}
               cursor
               cursorStyle="|"
@@ -104,8 +106,9 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.42 }}
         >
-          I build production-ready MERN applications, workflow automations, and
-          agentic AI systems that connect LLMs, APIs, and real business workflows.
+          I build production-ready MERN applications, LangGraph-powered agentic
+          systems, ML/DL experiments, and n8n automations that connect LLMs,
+          APIs, and real business workflows.
         </motion.p>
 
         <motion.div

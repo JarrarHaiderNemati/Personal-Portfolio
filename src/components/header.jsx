@@ -7,7 +7,7 @@ import { Download, Menu, X } from 'lucide-react'
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const navItems = ['about', 'experience', 'projects', 'education', 'contact']
+  const navItems = ['about', 'experience', 'projects', 'education', 'courses', 'contact']
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +46,7 @@ function Header() {
             </span>
             <span className="hidden sm:block">
               <span className="block text-sm font-semibold text-white">Jarrar Haider Nemati</span>
-              <span className="block text-xs text-slate-400">AI-Powered Full Stack Developer</span>
+              <span className="block text-xs text-slate-400">Agentic AI | ML/DL | n8n</span>
             </span>
           </button>
         </motion.div>
@@ -62,7 +62,7 @@ function Header() {
               <li key={item}>
                 <button 
                   onClick={() => handleScroll(item)} 
-                  className="rounded-full px-4 py-2 text-sm font-medium text-slate-300 transition-colors duration-300 hover:bg-blue-500/20 hover:text-white"
+                  className="rounded-full px-3 py-2 text-sm font-medium text-slate-300 transition-colors duration-300 hover:bg-blue-500/20 hover:text-white lg:px-4"
                 >
                   <span className="capitalize">{item}</span>
                 </button>

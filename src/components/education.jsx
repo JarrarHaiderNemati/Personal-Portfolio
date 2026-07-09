@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-import { Award, BookOpen, Calendar, GraduationCap, MapPin } from 'lucide-react'
+import { BookOpen, Calendar, GraduationCap, MapPin } from 'lucide-react'
 
 function Education() {
   const { ref, inView } = useInView({
@@ -11,11 +11,6 @@ function Education() {
   })
 
   const coursework = ["Data Structures", "Algorithms", "Web Development", "Database Systems", "Software Engineering"]
-  const certifications = [
-    "DeepLearning.AI AI Agents in LangGraph",
-    "Coursera Deep Learning Specialization - In Progress",
-    "Coursera Retrieval-Augmented Generation - In Progress",
-  ]
 
   return (
     <section
@@ -72,18 +67,6 @@ function Education() {
                       </span>
                     ))}
                   </div>
-                </div>
-
-                <div className="mt-7">
-                  <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                    <Award size={17} />
-                    Courses & certifications
-                  </div>
-                  <ul className="mt-3 space-y-2 text-gray-300">
-                    {certifications.map((certification) => (
-                      <li key={certification}>{certification}</li>
-                    ))}
-                  </ul>
                 </div>
               </div>
             </div>

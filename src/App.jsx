@@ -6,6 +6,7 @@ import About from './components/about.jsx'
 import Experience from './components/experience.jsx'
 import Projects from './components/projects.jsx'
 import Education from './components/education.jsx'
+import Courses from './components/courses.jsx'
 import Footer from './components/footer.jsx'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Experience></Experience>
       <Projects></Projects>
       <Education></Education>
+      <Courses></Courses>
       <Contact></Contact>
       <Footer></Footer>
     </main>

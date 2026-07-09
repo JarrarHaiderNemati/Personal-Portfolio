@@ -2,29 +2,35 @@
 
 import { motion } from "framer-motion"
 import { Typewriter } from "react-simple-typewriter"
-import { ArrowDown, Code, Briefcase } from 'lucide-react'
+import { ArrowDown, Bot, Briefcase, Code2, Sparkles, Workflow } from 'lucide-react'
+
+const particles = Array.from({ length: 26 }).map((_, index) => ({
+  id: index,
+  x: (index * 37) % 100,
+  y: (index * 53) % 100,
+  size: 5 + (index % 7) * 2,
+  duration: 12 + (index % 6) * 3,
+}))
 
 function Hero() {
   const viewSection = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
   }
 
-  // Particle animation for background
-  const particles = Array.from({ length: 20 }).map((_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 10 + 5,
-    duration: Math.random() * 20 + 10
-  }))
+  const highlights = [
+    { label: "MERN Stack", icon: <Code2 size={18} /> },
+    { label: "LLMs + RAG", icon: <Bot size={18} /> },
+    { label: "n8n + APIs", icon: <Workflow size={18} /> },
+  ]
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white px-6 sm:px-10 text-center pt-24 pb-16">
-      {/* Animated background particles */}
+    <section className="relative min-h-screen overflow-hidden bg-gradient-to-b from-gray-950 via-slate-900 to-gray-950 px-5 pb-16 pt-28 text-center text-white sm:px-8 lg:pt-32">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(59,130,246,0.22),transparent_30%),radial-gradient(circle_at_82%_16%,rgba(168,85,247,0.22),transparent_28%),radial-gradient(circle_at_50%_85%,rgba(20,184,166,0.14),transparent_34%)]" />
+
       {particles.map((particle) => (
-        <motion.div
+        <motion.span
           key={particle.id}
-          className="absolute rounded-full bg-blue-500/10"
+          className="absolute rounded-full bg-blue-400/20 shadow-[0_0_24px_rgba(96,165,250,0.4)]"
           style={{
             width: particle.size,
             height: particle.size,
@@ -32,114 +38,125 @@ function Hero() {
             top: `${particle.y}%`,
           }}
           animate={{
-            x: [0, Math.random() * 100 - 50],
-            y: [0, Math.random() * 100 - 50],
-            opacity: [0.1, 0.3, 0.1],
+            x: [0, (particle.id % 2 === 0 ? 1 : -1) * (24 + particle.id)],
+            y: [0, (particle.id % 3 === 0 ? 1 : -1) * (18 + particle.id)],
+            opacity: [0.15, 0.5, 0.15],
+            scale: [1, 1.35, 1],
           }}
           transition={{
             duration: particle.duration,
             repeat: Infinity,
             repeatType: "reverse",
+            ease: "easeInOut",
           }}
         />
       ))}
 
-      {/* Profile Image with glow effect */}
-      <motion.div
-        className="mb-10 relative"
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.8,
-          delay: 0.2,
-          type: "spring",
-          stiffness: 100
-        }}
-      >
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 blur-xl opacity-30 animate-pulse" />
-        <img
-          src="/Jar.jpeg"
-          alt="Jarrar Haider"
-          className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-blue-500/50 shadow-xl object-cover z-10"
-        />
-      </motion.div>
-
-      {/* Name & Title with Typewriter Effect */}
-      <motion.h1
-        className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-      >
-        Hi, I'm{" "}
-        <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-          <Typewriter
-            words={["Jarrar Haider", "a Full Stack Developer", "a MERN Stack Developer"]}
-            loop={0}
-            cursor
-            cursorStyle="|"
-            typeSpeed={100}
-            deleteSpeed={50}
-            delaySpeed={1500}
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-8rem)] max-w-6xl flex-col items-center justify-center">
+        <motion.div
+          className="relative mb-8"
+          initial={{ opacity: 0, scale: 0.7, y: 18 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.75, type: "spring", stiffness: 110 }}
+        >
+          <div className="absolute -inset-5 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-400 opacity-35 blur-2xl" />
+          <div className="absolute -inset-2 rounded-full border border-blue-300/30" />
+          <img
+            src="/Jar.jpeg"
+            alt="Jarrar Haider Nemati"
+            className="relative h-36 w-36 rounded-full border-4 border-blue-400/60 object-cover shadow-2xl shadow-blue-950/60 sm:h-44 sm:w-44"
           />
-        </span>
-      </motion.h1>
+        </motion.div>
 
-      {/* Subtitle with gradient border */}
-      <motion.div
-        className="inline-block mb-8 px-6 py-2 border-2 border-blue-500/30 rounded-full backdrop-blur-sm bg-gray-900/30"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.7 }}
-      >
-        <p className="text-lg sm:text-xl bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent font-medium">
-          AI-Powered Full Stack Developer | n8n & Automations | MERN
-        </p>
-      </motion.div>
-
-      {/* About Me Section */}
-      <motion.p
-        className="max-w-xl text-base sm:text-lg text-gray-300 mb-8 leading-relaxed"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.9 }}
-      >
-        I am an AI-powered full-stack developer specializing in the MERN stack.
-        I build intelligent, scalable, and modern web applications by combining
-        clean code with AI, automation, and smart system design.
-      </motion.p>
-
-      {/* CTA Buttons */}
-      <motion.div
-        className="flex flex-col sm:flex-row gap-4 w-full max-w-md"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1.3 }}
-      >
-        <button
-          onClick={() => viewSection("projects")}
-          className="group flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-blue-500/25 transition-all duration-300 w-full"
+        <motion.div
+          className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-400/25 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-100 backdrop-blur"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.18 }}
         >
-          <Code size={20} className="group-hover:rotate-12 transition-transform duration-300" />
-          <span className="font-medium">View My Work</span>
-        </button>
-        <button
-          onClick={() => viewSection("contact")}
-          className="group flex items-center justify-center gap-2 bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-600 hover:to-gray-800 text-white px-8 py-4 rounded-xl border border-gray-600 hover:border-gray-500 transition-all duration-300 w-full"
-        >
-          <Briefcase size={20} className="group-hover:rotate-12 transition-transform duration-300" />
-          <span className="font-medium">Hire Me</span>
-        </button>
-      </motion.div>
+          <Sparkles size={16} className="text-cyan-300" />
+          AI-Powered Full Stack Developer
+        </motion.div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        <motion.h1
+          className="max-w-5xl text-4xl font-black leading-tight text-white sm:text-6xl lg:text-7xl"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, delay: 0.28 }}
+        >
+          Hi, I'm{" "}
+          <span className="bg-gradient-to-r from-blue-300 via-cyan-200 to-purple-300 bg-clip-text text-transparent">
+            <Typewriter
+              words={["Jarrar Haider Nemati", "a MERN Developer", "an Agentic AI Builder"]}
+              loop={0}
+              cursor
+              cursorStyle="|"
+              typeSpeed={85}
+              deleteSpeed={45}
+              delaySpeed={1400}
+            />
+          </span>
+        </motion.h1>
+
+        <motion.p
+          className="mt-6 max-w-3xl text-base leading-8 text-gray-300 sm:text-xl"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, delay: 0.42 }}
+        >
+          I build production-ready MERN applications, workflow automations, and
+          agentic AI systems that connect LLMs, APIs, and real business workflows.
+        </motion.p>
+
+        <motion.div
+          className="mt-8 flex w-full max-w-md flex-col gap-4 sm:flex-row"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, delay: 0.56 }}
+        >
+          <button
+            onClick={() => viewSection("projects")}
+            className="group flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 px-7 py-4 font-bold text-white shadow-xl shadow-blue-950/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-blue-500/25"
+          >
+            <Code2 size={20} className="transition-transform group-hover:rotate-12" />
+            View My Work
+          </button>
+          <button
+            onClick={() => viewSection("contact")}
+            className="group flex flex-1 items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-7 py-4 font-bold text-white backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-blue-300/50 hover:bg-white/15"
+          >
+            <Briefcase size={20} className="transition-transform group-hover:rotate-12" />
+            Hire Me
+          </button>
+        </motion.div>
+
+        <motion.div
+          className="mt-8 flex flex-wrap justify-center gap-3"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, delay: 0.68 }}
+        >
+          {highlights.map((item) => (
+            <span
+              key={item.label}
+              className="inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-gray-900/55 px-4 py-2 text-sm font-medium text-gray-200 shadow-lg shadow-black/10 backdrop-blur"
+            >
+              <span className="text-cyan-300">{item.icon}</span>
+              {item.label}
+            </span>
+          ))}
+        </motion.div>
+      </div>
+
+      <motion.button
+        onClick={() => viewSection("about")}
+        className="absolute bottom-7 left-1/2 z-10 -translate-x-1/2 text-blue-300"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 1.5, repeat: Infinity }}
+        aria-label="Scroll to about"
       >
-        <ArrowDown className="text-blue-400 animate-pulse" size={24} />
-      </motion.div>
+        <ArrowDown size={26} />
+      </motion.button>
     </section>
   )
 }

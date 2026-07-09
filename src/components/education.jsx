@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-import { GraduationCap, Calendar, MapPin } from 'lucide-react'
+import { Award, BookOpen, Calendar, GraduationCap, MapPin } from 'lucide-react'
 
 function Education() {
   const { ref, inView } = useInView({
@@ -10,70 +10,82 @@ function Education() {
     threshold: 0.2,
   })
 
+  const coursework = ["Data Structures", "Algorithms", "Web Development", "Database Systems", "Software Engineering"]
+  const certifications = [
+    "DeepLearning.AI AI Agents in LangGraph",
+    "Coursera Deep Learning Specialization - In Progress",
+    "Coursera Retrieval-Augmented Generation - In Progress",
+  ]
+
   return (
     <section
       ref={ref}
       id="education"
-      className="py-24 px-6 sm:px-10 bg-gradient-to-b from-gray-900 to-gray-800 text-white"
+      className="bg-gradient-to-b from-gray-900 to-gray-950 px-5 py-24 text-white sm:px-8"
     >
-      <div className="container mx-auto max-w-5xl">
-        {/* Section header */}
+      <div className="mx-auto max-w-6xl">
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
+          className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]"
+          initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-4xl font-bold mb-4 inline-block bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-            Education
-          </h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
-        </motion.div>
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-cyan-300">Education</p>
+            <h2 className="mt-4 bg-gradient-to-r from-blue-300 via-cyan-200 to-purple-300 bg-clip-text text-4xl font-black leading-tight text-transparent sm:text-5xl">
+              Software engineering foundation with a builder's mindset.
+            </h2>
+          </div>
 
-        {/* Education card */}
-        <motion.div
-          className="relative"
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.2 }}
-        >
-          {/* Timeline line */}
-          <div className="absolute left-0 sm:left-1/2 transform sm:-translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-500 to-purple-600 rounded-full"></div>
-          
-          {/* Education card */}
-          <div className="relative ml-8 sm:ml-0 sm:flex sm:justify-center">
-            <div className="absolute left-0 sm:left-1/2 transform -translate-x-[calc(50%+16px)] sm:-translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/20">
-              <GraduationCap className="text-white" size={16} />
-            </div>
-            
-            <div className="sm:w-5/12 sm:mr-8 sm:ml-auto bg-gray-800/80 backdrop-blur-sm p-6 rounded-2xl border border-blue-500/20 shadow-xl hover:shadow-blue-500/10 transition-all duration-300 hover:-translate-y-1">
-              <div className="flex items-center mb-4">
-                <div className="p-2 rounded-lg bg-blue-500/10 mr-4">
-                  <GraduationCap className="text-blue-400" size={24} />
+          <div className="rounded-2xl border border-blue-400/15 bg-gray-900/60 p-6 shadow-xl shadow-black/20 backdrop-blur sm:p-8">
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+              <div className="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-950/30">
+                <GraduationCap size={28} />
+              </div>
+              <div>
+                <h3 className="text-3xl font-black text-white">NUST</h3>
+                <p className="mt-2 text-xl font-bold text-gray-100">Bachelor's in Software Engineering</p>
+
+                <div className="mt-5 grid gap-3 text-gray-300 sm:grid-cols-2">
+                  <div className="flex items-center gap-2">
+                    <Calendar size={18} className="text-cyan-300" />
+                    <span>Expected graduation: 2027</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MapPin size={18} className="text-cyan-300" />
+                    <span>Islamabad, Pakistan</span>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                  NUST
-                </h3>
+
+                <div className="mt-6">
+                  <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
+                    <BookOpen size={17} />
+                    Relevant coursework
+                  </div>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {coursework.map((course) => (
+                      <span
+                        key={course}
+                        className="rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-sm font-semibold text-gray-200"
+                      >
+                        {course}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-7">
+                  <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
+                    <Award size={17} />
+                    Courses & certifications
+                  </div>
+                  <ul className="mt-3 space-y-2 text-gray-300">
+                    {certifications.map((certification) => (
+                      <li key={certification}>{certification}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              
-              <p className="text-lg font-medium text-white mb-2">
-                Bachelor's in Software Engineering
-              </p>
-              
-              <div className="flex items-center text-gray-400 mb-1">
-                <Calendar size={16} className="mr-2" />
-                <span>Expected Graduation: 2027</span>
-              </div>
-              
-              <div className="flex items-center text-gray-400 mb-4">
-                <MapPin size={16} className="mr-2" />
-                <span>Islamabad, Pakistan</span>
-              </div>
-              
-              <p className="text-gray-300 leading-relaxed">
-                Currently studying Software Engineering at the National University of Sciences and Technology (NUST), 
-                one of Pakistan's premier technical institutions.
-              </p>
             </div>
           </div>
         </motion.div>

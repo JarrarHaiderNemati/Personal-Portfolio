@@ -11,50 +11,35 @@ function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gray-900 text-white py-12 px-6 border-t border-gray-800">
-      <div className="container mx-auto max-w-5xl">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          {/* Logo and copyright */}
-          <div className="mb-6 md:mb-0 text-center md:text-left">
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-2">
-              Jarrar Haider
-            </h2>
-            <p className="text-gray-400 text-sm">&copy; {currentYear} All rights reserved.</p>
-          </div>
+    <footer className="border-t border-blue-400/10 bg-gray-950 px-5 py-10 text-white sm:px-8">
+      <div className="mx-auto flex max-w-6xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h2 className="text-xl font-black">Jarrar Haider Nemati</h2>
+          <p className="mt-1 text-sm text-slate-400">&copy; {currentYear} Built with React and Tailwind CSS.</p>
+        </div>
 
-          {/* Quick links */}
-          <div className="mb-6 md:mb-0">
-            <h3 className="text-lg font-medium mb-3 text-center md:text-left">Quick Links</h3>
-            <div className="flex justify-center md:justify-start space-x-4">
-              <a href="#about" className="text-gray-400 hover:text-blue-400 transition-colors">
-                About
-              </a>
-              <a href="#projects" className="text-gray-400 hover:text-blue-400 transition-colors">
-                Projects
-              </a>
-              <a href="#education" className="text-gray-400 hover:text-blue-400 transition-colors">
-                Education
-              </a>
-              <a href="#contact" className="text-gray-400 hover:text-blue-400 transition-colors">
-                Contact
-              </a>
-            </div>
-          </div>
-
-          {/* Back to top button */}
+        <div className="flex items-center gap-3">
+          <a href="#about" className="text-sm font-semibold text-slate-400 transition hover:text-white">
+            About
+          </a>
+          <a href="#experience" className="text-sm font-semibold text-slate-400 transition hover:text-white">
+            Experience
+          </a>
+          <a href="#projects" className="text-sm font-semibold text-slate-400 transition hover:text-white">
+            Projects
+          </a>
+          <a href="#contact" className="text-sm font-semibold text-slate-400 transition hover:text-white">
+            Contact
+          </a>
           <motion.button
             onClick={scrollToTop}
-            className="bg-gradient-to-r from-blue-500 to-purple-600 p-3 rounded-full shadow-lg hover:shadow-blue-500/25 transition-all duration-300 hover:-translate-y-1"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
+            className="ml-2 grid h-10 w-10 place-items-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-950/25 transition"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.96 }}
+            aria-label="Back to top"
           >
             <ArrowUp size={20} />
           </motion.button>
-        </div>
-
-        {/* Bottom text */}
-        <div className="text-center mt-8 text-sm text-gray-500">
-          <p>Designed and developed by Jarrar Haider</p>
         </div>
       </div>
     </footer>
